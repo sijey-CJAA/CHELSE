@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cybersecurity Access Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+            color: #00ffcc;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .access-container {
+            background: rgba(20, 30, 48, 0.96);
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 30px #00ffcc33;
+            border-radius: 10px;
+            padding: 2.5em 2em;
+            min-width: 340px;
+            max-width: 95vw;
+            width: 100%;
+            text-align: center;
+            animation: flicker 2s infinite alternate;
+            box-sizing: border-box;
+        }
+        @keyframes flicker {
+            0%, 100% { box-shadow: 0 0 30px #00ffcc33; }
+            50% { box-shadow: 0 0 50px #00ffcc99; }
+        }
+        h2 {
+            margin-bottom: 1em;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px #00ffcc88;
+            font-size: 1.6em;
+        }
+        label {
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+        input[type="text"] {
+            background: #222b3a;
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            padding: 0.7em;
+            width: 100%;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            outline: none;
+            box-shadow: 0 0 8px #00ffcc33;
+            transition: box-shadow 0.2s;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        input[type="text"]:focus {
+            box-shadow: 0 0 16px #00ffcc99;
+        }
+        button {
+            background: linear-gradient(90deg, #00ffcc 0%, #009999 100%);
+            color: #141e30;
+            border: none;
+            border-radius: 5px;
+            padding: 0.8em 2em;
+            font-size: 1.2em;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 8px #00ffcc66;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 0.5em;
+            width: 100%;
+            max-width: 300px;
+        }
+        button:active, button:focus {
+            background: linear-gradient(90deg, #009999 0%, #00ffcc 100%);
+            color: #00ffcc;
+        }
+        #error {
+            color: #ff0066;
+            font-weight: bold;
+            margin-top: 1em;
+            text-shadow: 0 0 8px #ff006688;
+            animation: error-flicker 1s infinite alternate;
+            min-height: 1.5em;
+            font-size: 1.1em;
+        }
+        @keyframes error-flicker {
+            0%, 100% { text-shadow: 0 0 8px #ff006688; }
+            50% { text-shadow: 0 0 16px #ff0066cc; }
+        }
+        .cyber-logo {
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+            letter-spacing: 4px;
+            color: #00ffcc;
+            text-shadow: 0 0 18px #00ffcc99;
+        }
+        .blinking {
+            animation: blink 1.2s steps(2, start) infinite;
+        }
+        @keyframes blink {
+            to {
+                visibility: hidden;
+            }
+        }
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+            }
+            .access-container {
+                min-width: unset;
+                width: 97vw;
+                padding: 1em 0.5em;
+                border-radius: 6px;
+                max-width: 97vw;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .cyber-logo {
+                font-size: 1.3em;
+            }
+            button {
+                font-size: 1em;
+                padding: 0.7em 1em;
+                max-width: 97vw;
+            }
+            input[type="text"] {
+                font-size: 1em;
+                padding: 0.6em;
+                max-width: 97vw;
+            }
+        }
+    </style>
+    <script>
+        function checkKey1(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === 'jyalfy827md') { // Change 'mysecretkey' to your desired key
+                sessionStorage.setItem('access_granted', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').innerText = 'Access Denied! Invalid key.';
+            }
+        }
+        function checkKey2(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === 'lauyr3o76r') { // Change 'mysecretkey' to your desired key
+                sessionStorage.setItem('access_granted', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').innerText = 'Access Denied! Invalid key.';
+            }
+        }
+        function checkKey3(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === 'Hsu_us**9sn') { // Change 'mysecretkey' to your desired key
+                sessionStorage.setItem('access_granted', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').innerText = 'Access Denied! Invalid key.';
+            }
+        }
+        function checkKey4(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === 'sdfy&88*65%4%') { // Change 'mysecretkey' to your desired key
+                sessionStorage.setItem('access_granted', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').innerText = 'Access Denied! Invalid key.';
+            }
+        }
+        function checkKey(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === '...') { // Change 'mysecretkey' to your desired key
+                sessionStorage.setItem('access_granted', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').innerText = 'Access Denied! Invalid key.';
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="access-container">
+        <div class="cyber-logo">CYBER <span class="blinking">▌</span> PORTAL</div>
+        <!--<form onsubmit="checkKey1(event)">-->
+        <!--<form onsubmit="checkKey2(event)">-->
+        <!--<form onsubmit="checkKey3(event)">-->
+        <!--<form onsubmit="checkKey4(event)">-->
+        <form onsubmit="checkKey(event)">
+        <!--<form onsubmit="checkKey(event)">-->
+            <h2>Enter Access Key</h2>
+            <label for="key">Key:</label>
+            <input type="text" id="key" autocomplete="off" required autofocus>
+            <button type="submit">ACCESS</button>
+            <div id="error"></div>
+        </form>
+    </div>
+</body>
+</html>

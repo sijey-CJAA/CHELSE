@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where Romance Begins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at 60% 40%, #ffe5ec 0%, #ffc4d6 60%, #b5838d 100%);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .center-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .carousel {
+            width: 120px;
+            height: 80vh;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 0;
+            position: relative;
+            margin: 0 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-track {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carousel-left .carousel-track {
+            animation: slideUp 25s linear infinite;
+        }
+        .carousel-right .carousel-track {
+            animation: slideDown 25s linear infinite;
+        }
+
+        .carousel-track img {
+            max-width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+            margin: 10px 0;
+            border-radius: 12px;
+        }
+
+        @keyframes slideUp {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        @keyframes slideDown {
+            0%   { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+
+        .romance-container {
+            background: rgba(255,255,255,0.90);
+            padding: 2.5em 2em;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px #b5838d99;
+            text-align: center;
+            max-width: 520px;
+            width: 93vw;
+            z-index: 1;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #b5838d;
+            margin-bottom: 0.3em;
+            text-shadow: 0 2px 8px #ffb4a2;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #6d6875;
+            margin-bottom: 1.5em;
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #ffb4a2;
+            transform: rotate(-45deg);
+            animation: float 9s linear infinite;
+            opacity: 0.8;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #ffb4a2;
+            border-radius: 50%;
+        }
+
+        .heart:before { top: -20px; left: 0; }
+        .heart:after { left: 20px; top: 0; }
+
+        @keyframes float {
+            0%   { bottom: -50px; opacity: 0.7; transform: rotate(-45deg) scale(0.8); }
+            70%  { opacity: 1; transform: rotate(-45deg) scale(1.1); }
+            100% { bottom: 100vh; opacity: 0; transform: rotate(-45deg) scale(0.7); }
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ffb4a2, #ffc4d6);
+            color: #6d6875;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0.8em 2em;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.1em;
+            font-weight: 700;
+            box-shadow: 0 2px 12px #ffb4a266;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn:active, .btn:focus {
+            background: linear-gradient(90deg, #ffc4d6, #ffb4a2);
+            color: #b5838d;
+        }
+
+        /* --- MOBILE STYLES --- */
+        @media (max-width: 600px) {
+            .center-layout {
+                flex-direction: column;
+                height: auto;
+                justify-content: flex-start;
+                padding-top: 4vh;
+            }
+            .carousel {
+                width: 100vw;
+                height: 90px;
+                margin: 12px auto;
+                display: flex;
+                position: static;
+                border-radius: 15px;
+            }
+            .carousel-track {
+                flex-direction: row !important;
+                justify-content: flex-start;
+                align-items: center;
+                display: flex;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                width: 100vw;
+                min-width: fit-content;
+            }
+            .carousel-left .carousel-track {
+                animation: slideRight 7s linear infinite !important;
+            }
+            .carousel-right .carousel-track {
+                animation: slideLeft 7s linear infinite !important;
+            }
+            .carousel-track img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                background: #fff;
+                margin: 0 8px;
+                border-radius: 12px;
+                overflow: visible;
+                flex-shrink: 0;
+                display: inline-block;
+            }
+            .romance-container {
+                padding: 1.3em 0.7em;
+                border-radius: 12px;
+                max-width: 96vw;
+                width: 96vw;
+                margin: 0 auto 2vh auto;
+            }
+            h1 { font-size: 2em; }
+            p { font-size: 1em; }
+            .btn {
+                font-size: 1em;
+                padding: 0.7em 1em;
+                width: 95%;
+                max-width: 280px;
+            }
+            .heart, .heart:before, .heart:after {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @keyframes slideRight {
+            0%   { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes slideLeft {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+    <script>
+        if (sessionStorage.getItem('access_granted') !== 'true') {
+            window.location.href = 'enter.html';
+        }
+        function createHearts() {
+            const hearts = document.querySelector('.hearts');
+            for (let i = 0; i < 16; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.animationDuration = `${6 + Math.random() * 6}s`;
+                heart.style.opacity = `${0.5 + Math.random() * 0.5}`;
+                hearts.appendChild(heart);
+            }
+        }
+        window.onload = createHearts;
+    </script>
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="center-layout">
+        <!-- Top Carousel: left to right -->
+        <div class="carousel carousel-left">
+            <div class="carousel-track">
+                <img src="images/img1.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
+                <img src="images/img3.jpeg" alt="">
+                <img src="images/img4.png" alt="">
+                <img src="images/img5.jpg" alt="">
+                <img src="images/img6.jpg" alt="">
+                <img src="images/img7.jpg" alt="">
+                <img src="images/img8.jpg" alt="">
+                <img src="images/img9.jpg" alt="">
+                <img src="images/img10.jpg" alt="">
+                <img src="images/img11.jpg" alt="">
+                <img src="images/img12.jpg" alt="">
+                <img src="images/img13.jpg" alt="">
+                <img src="images/img14.jpg" alt="">
+                <img src="images/img15.jpg" alt="">
+                <img src="images/img16.jpg" alt="">
+                <img src="images/img17.jpg" alt="">
+                <!-- Duplicate images for seamless animation -->
+                <img src="images/img1.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
+                <img src="images/img3.jpeg" alt="">
+                <img src="images/img4.png" alt="">
+                <img src="images/img5.jpg" alt="">
+                <img src="images/img6.jpg" alt="">
+                <img src="images/img7.jpg" alt="">
+                <img src="images/img8.jpg" alt="">
+                <img src="images/img9.jpg" alt="">
+                <img src="images/img10.jpg" alt="">
+                <img src="images/img11.jpg" alt="">
+                <img src="images/img12.jpg" alt="">
+                <img src="images/img13.jpg" alt="">
+                <img src="images/img14.jpg" alt="">
+                <img src="images/img15.jpg" alt="">
+                <img src="images/img16.jpg" alt="">
+                <img src="images/img17.jpg" alt="">
+            </div>
+        </div>
+        <!-- Central Message Box -->
+        <div class="romance-container">
+            <h1>Happy 29th Monthsary Bekbek</h1>
+            <p>
+                I LOVE YOU SEA<br>
+            </p>
+            <button class="btn" onclick="alert('hehehehe MWUA')">MWUA</button>
+        </div>
+        <!-- Bottom Carousel: right to left -->
+        <div class="carousel carousel-right">
+            <div class="carousel-track">
+                <img src="images/img1.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
+                <img src="images/img3.jpeg" alt="">
+                <img src="images/img4.png" alt="">
+                <img src="images/img5.jpg" alt="">
+                <img src="images/img6.jpg" alt="">
+                <img src="images/img7.jpg" alt="">
+                <img src="images/img8.jpg" alt="">
+                <img src="images/img9.jpg" alt="">
+                <img src="images/img10.jpg" alt="">
+                <img src="images/img11.jpg" alt="">
+                <img src="images/img12.jpg" alt="">
+                <img src="images/img13.jpg" alt="">
+                <img src="images/img14.jpg" alt="">
+                <img src="images/img15.jpg" alt="">
+                <img src="images/img16.jpg" alt="">
+                <img src="images/img17.jpg" alt="">
+                <!-- Duplicate images for seamless animation -->
+                <img src="images/img1.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
+                <img src="images/img3.jpeg" alt="">
+                <img src="images/img4.png" alt="">
+                <img src="images/img5.jpg" alt="">
+                <img src="images/img6.jpg" alt="">
+                <img src="images/img7.jpg" alt="">
+                <img src="images/img8.jpg" alt="">
+                <img src="images/img9.jpg" alt="">
+                <img src="images/img10.jpg" alt="">
+                <img src="images/img11.jpg" alt="">
+                <img src="images/img12.jpg" alt="">
+                <img src="images/img13.jpg" alt="">
+                <img src="images/img14.jpg" alt="">
+                <img src="images/img15.jpg" alt="">
+                <img src="images/img16.jpg" alt="">
+                <img src="images/img17.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
