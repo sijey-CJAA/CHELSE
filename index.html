@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>29th Months Bek</title>
+    <title>29th Month</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Montserrat:400,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             min-height: 100vh;
-            background: radial-gradient(circle at 60% 40%, #ffe5ec 0%, #ffc4d6 60%, #b5838d 100%);
+            background: radial-gradient(circle at 60% 40%, #2d1836 0%, #6d44a6 45%, #b5838d 95%, #222 100%);
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
             position: relative;
@@ -25,12 +25,12 @@
         }
 
         .carousel {
-            width: 120px;
+            width: 180px;
             height: 80vh;
             overflow: hidden;
             border-radius: 15px;
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #221a29 60%, #6d44a6 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
             z-index: 0;
             position: relative;
             margin: 0 40px;
@@ -46,19 +46,23 @@
             align-items: center;
         }
 
+        .carousel-track img {
+            width: 115px;
+            height: 160px;
+            object-fit: cover;
+            margin: 14px 0;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px #4b246b88;
+            background: #222;
+            display: block;
+            border: 2px solid #6d44a6;
+        }
+
         .carousel-left .carousel-track {
             animation: slideUp 25s linear infinite;
         }
         .carousel-right .carousel-track {
             animation: slideDown 25s linear infinite;
-        }
-
-        .carousel-track img {
-            max-width: 100%;
-            max-height: 120px;
-            object-fit: contain;
-            margin: 10px 0;
-            border-radius: 12px;
         }
 
         @keyframes slideUp {
@@ -72,29 +76,31 @@
         }
 
         .romance-container {
-            background: rgba(255,255,255,0.90);
+            background: linear-gradient(120deg, #6d44a6dd 0%, #222 100%);
             padding: 2.5em 2em;
             border-radius: 20px;
-            box-shadow: 0 8px 32px #b5838d99;
+            box-shadow: 0 8px 32px #4b246b66;
             text-align: center;
             max-width: 520px;
             width: 93vw;
             z-index: 1;
             margin: 0 auto;
+            color: #ffe5ec;
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 3em;
-            color: #b5838d;
+            color: #c9a3ea;
             margin-bottom: 0.3em;
-            text-shadow: 0 2px 8px #ffb4a2;
+            text-shadow: 0 2px 8px #4b246b;
         }
 
         p {
             font-size: 1.2em;
-            color: #6d6875;
+            color: #ffe5ec;
             margin-bottom: 1.5em;
+            text-shadow: 0 1px 8px #222;
         }
 
         .hearts {
@@ -108,10 +114,11 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            background: #ffb4a2;
+            background: linear-gradient(135deg, #6d44a6, #c9a3ea 80%);
             transform: rotate(-45deg);
             animation: float 9s linear infinite;
             opacity: 0.8;
+            box-shadow: 0 0 12px #4b246b99;
         }
 
         .heart:before,
@@ -120,7 +127,7 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            background: #ffb4a2;
+            background: linear-gradient(135deg, #6d44a6, #c9a3ea 80%);
             border-radius: 50%;
         }
 
@@ -134,22 +141,22 @@
         }
 
         .btn {
-            background: linear-gradient(90deg, #ffb4a2, #ffc4d6);
-            color: #6d6875;
+            background: linear-gradient(90deg, #6d44a6, #c9a3ea);
+            color: #ffe5ec;
             font-family: 'Montserrat', sans-serif;
             padding: 0.8em 2em;
             border-radius: 30px;
             border: none;
             font-size: 1.1em;
             font-weight: 700;
-            box-shadow: 0 2px 12px #ffb4a266;
+            box-shadow: 0 2px 12px #4b246b66;
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
         }
 
         .btn:active, .btn:focus {
-            background: linear-gradient(90deg, #ffc4d6, #ffb4a2);
-            color: #b5838d;
+            background: linear-gradient(90deg, #c9a3ea, #6d44a6);
+            color: #222;
         }
 
         /* --- MOBILE STYLES --- */
@@ -162,7 +169,7 @@
             }
             .carousel {
                 width: 100vw;
-                height: 90px;
+                height: 140px;
                 margin: 12px auto;
                 display: flex;
                 position: static;
@@ -185,15 +192,17 @@
                 animation: slideLeft 7s linear infinite !important;
             }
             .carousel-track img {
-                width: 60px;
-                height: 60px;
+                width: 90px;
+                height: 120px;
                 object-fit: cover;
-                background: #fff;
-                margin: 0 8px;
-                border-radius: 12px;
+                background: #222;
+                margin: 0 10px;
+                border-radius: 14px;
                 overflow: visible;
                 flex-shrink: 0;
                 display: inline-block;
+                box-shadow: 0 2px 12px #4b246b33;
+                border: 2px solid #6d44a6;
             }
             .romance-container {
                 padding: 1.3em 0.7em;
@@ -201,6 +210,8 @@
                 max-width: 96vw;
                 width: 96vw;
                 margin: 0 auto 2vh auto;
+                color: #ffe5ec;
+                background: linear-gradient(120deg, #6d44a6dd 0%, #222 100%);
             }
             h1 { font-size: 2em; }
             p { font-size: 1em; }
@@ -244,6 +255,7 @@
     </script>
 </head>
 <body>
+    <audio id="bg-music" src="audio\song.mp3" autoplay loop hidden></audio>
     <div class="hearts"></div>
     <div class="center-layout">
         <!-- Top Carousel: left to right -->
@@ -336,5 +348,4 @@
         </div>
     </div>
 </body>
-
 </html>
